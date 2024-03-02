@@ -7,6 +7,8 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import GallerySection from "./GallerySection";
+import { Link as RouterLink } from "react-router-dom";
 
 const links = [
   {
@@ -22,8 +24,8 @@ const links = [
     to: "/club",
   },
   {
-    title: "More",
-    to: "/more",
+    title: "Gallery",
+    to: "/gallery",
   },
 ];
 
@@ -45,7 +47,7 @@ const Navbar = () => {
       >
         <Box>
           <Box display="flex" alignItems="center">
-            <Image src="Leo.png" />
+            <Image src="./Logo/Leo.png" />
             <Heading size="md">Leo District Council 325M, Nepal</Heading>
           </Box>
         </Box>
