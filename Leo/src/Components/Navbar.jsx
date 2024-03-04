@@ -24,8 +24,13 @@ const links = [
     to: "/club",
   },
   {
+    title: "Resources",
+    to: "/resources",
+  },
+
+  {
     title: "Gallery",
-    to: "/gallery",
+    to: "/video",
   },
 ];
 
