@@ -117,7 +117,6 @@ const Navbar = () => {
               </Menu>
             </Box>
           )}
-
           <DonateDetails />
         </Box>
       </Box>
