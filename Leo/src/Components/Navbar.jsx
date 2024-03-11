@@ -3,12 +3,16 @@ import {
   Image,
   Heading,
   Link,
-  Button,
   useMediaQuery,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { HamburgerIcon } from "@chakra-ui/icons";
-import GallerySection from "./GallerySection";
-import { Link as RouterLink } from "react-router-dom";
+import { HamburgerIcon, ChevronDownIcon } from "@chakra-ui/icons";
+import DonateDetails from "./DonateDetails";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const links = [
   {
@@ -27,16 +31,18 @@ const links = [
     title: "Resources",
     to: "/resources",
   },
-
   {
     title: "Gallery",
-    to: "/video",
+    to: "/gallery/photo",
   },
 ];
 
 const Navbar = () => {
   const [isSmallerThan958] = useMediaQuery("(max-width: 958px)");
   const [isSmallerThan768] = useMediaQuery("(max-width: 768px)");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Box>
@@ -52,25 +58,67 @@ const Navbar = () => {
       >
         <Box>
           <Box display="flex" alignItems="center">
-            <Image src="./Logo/Leo.png" />
-            <Heading size="md">Leo District Council 325M, Nepal</Heading>
+            <Image
+              src="../Logo/Leo.png"
+              onClick={() => navigate("/")}
+              cursor="pointer"
+            />
+            <Heading size="md" onClick={() => navigate("/")} cursor="pointer">
+              Leo District Council 325M, Nepal
+            </Heading>
           </Box>
         </Box>
         <Box display="flex" alignItems="center" gap="50px">
           {isSmallerThan768 ? (
             <HamburgerIcon boxSize={6} />
           ) : (
-            <Box letterSpacing="0.75px" display="flex" gap="20px">
-              {links.map((link) => (
-                <Link key={link.to} href={link.to}>
-                  {link.title}
-                </Link>
-              ))}
+            <Box
+              letterSpacing="0.75px"
+              display="flex"
+              gap="20px"
+              position="relative"
+            >
+              {links
+                .filter((link) => link.title !== "Gallery")
+                .map((link) => (
+                  <Link
+                    key={link.to}
+                    href={link.to}
+                    color={
+                      location.pathname === link.to ? "primary.14" : "black"
+                    }
+                    _hover={{ color: "primary.9" }}
+                  >
+                    {link.title}
+                  </Link>
+                ))}
+              <Menu isOpen={isOpen} onClose={onClose} placement="bottom-start">
+                <MenuButton
+                  as={Link}
+                  href="/gallery/photo"
+                  color={
+                    location.pathname === "/gallery" ? "primary.14" : "black"
+                  }
+                  _hover={{ color: "primary.9" }}
+                  px={0}
+                  onMouseEnter={onOpen}
+                >
+                  {links.find((link) => link.title === "Gallery").title}
+                  <ChevronDownIcon />
+                </MenuButton>
+                <MenuList onMouseLeave={onClose}>
+                  <MenuItem onClick={() => navigate("/gallery/photo")}>
+                    Photo Gallery
+                  </MenuItem>
+                  <MenuItem onClick={() => navigate("/gallery/video")}>
+                    Video Gallery
+                  </MenuItem>
+                </MenuList>
+              </Menu>
             </Box>
           )}
-          <Button bg="primary.3" color="primary.2">
-            Donate Now
-          </Button>
+
+          <DonateDetails />
         </Box>
       </Box>
     </Box>

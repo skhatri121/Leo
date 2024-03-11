@@ -39,10 +39,12 @@
   justify-content: center;
   list-style-type: none;
   gap:10px;
+ 
 }
 
 .pagination-page {
   font-weight: 700;
+
 }
 
 .previous {

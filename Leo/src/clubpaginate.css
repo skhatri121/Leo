@@ -1,0 +1,12 @@
+
+.previous,.next {
+  display: none;
+}
+/* 
+.pagination{
+  color:#FFFFFF;
+} */
+
+.active{
+  color:black;
+}

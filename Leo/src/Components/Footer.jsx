@@ -19,6 +19,7 @@ const Footer = () => {
             <Text>
               <Text as="b">Developed By:</Text>
               <Text>Subash Khatri</Text>
+              <Text>Ashwin Khatiwada</Text>
             </Text>
           </Box>
         </Box>
