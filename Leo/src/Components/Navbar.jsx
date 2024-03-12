@@ -13,6 +13,7 @@ import {
 import { HamburgerIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import DonateDetails from "./DonateDetails";
 import { useNavigate, useLocation } from "react-router-dom";
+import HamburgerMenu from "./HamburgerMenu";
 
 const links = [
   {
@@ -38,7 +39,7 @@ const links = [
 ];
 
 const Navbar = () => {
-  const [isSmallerThan958] = useMediaQuery("(max-width: 958px)");
+  const [isSmallerThan1054] = useMediaQuery("(max-width: 1054px)");
   const [isSmallerThan768] = useMediaQuery("(max-width: 768px)");
   const navigate = useNavigate();
   const location = useLocation();
@@ -48,7 +49,7 @@ const Navbar = () => {
     <Box>
       <Box
         display="flex"
-        flexDirection={isSmallerThan958 ? "column" : "row"}
+        flexDirection={isSmallerThan1054 ? "column" : "row"}
         px="30px"
         py="10px"
         maxW="1200px"
@@ -68,9 +69,16 @@ const Navbar = () => {
             </Heading>
           </Box>
         </Box>
-        <Box display="flex" alignItems="center" gap="50px">
+        <Box
+          display="flex"
+          alignItems="center"
+          gap="50px"
+          justifyContent="space-between"
+          w={isSmallerThan768 ? "100%" : "auto"}
+          mt="5px"
+        >
           {isSmallerThan768 ? (
-            <HamburgerIcon boxSize={6} />
+            <HamburgerMenu links={links} />
           ) : (
             <Box
               letterSpacing="0.75px"
