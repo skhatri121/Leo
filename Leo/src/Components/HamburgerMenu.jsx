@@ -12,11 +12,26 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { useNavigate, useLocation } from "react-router-dom";
+
 const HamburgerMenu = ({ links }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
   const location = useLocation();
   const btnRef = React.useRef();
+
+  const filteredLinks = links.filter((link) => link.title !== "Gallery");
+
+  const updatedLinks = [
+    ...filteredLinks,
+    {
+      title: "Photo Gallery",
+      to: "/gallery/photo",
+    },
+    {
+      title: "Video Gallery",
+      to: "/gallery/video",
+    },
+  ];
 
   return (
     <>
@@ -35,14 +50,16 @@ const HamburgerMenu = ({ links }) => {
           <DrawerCloseButton color="primary.2" />
           <Box bg="primary.1">
             <VStack spacing={4} align="left">
-              {links.map((link, index) => (
+              {updatedLinks.map((link, index) => (
                 <Link
                   key={link.to}
                   href={link.to}
                   color={location.pathname === link.to ? "primary.4" : "white"}
                   _hover={{ color: "primary.9" }}
                   onClick={() => navigate(link.to)}
-                  borderBottom={index !== links.length ? "1px solid white" : ""}
+                  borderBottom={
+                    index !== updatedLinks.length ? "1px solid white" : ""
+                  }
                 >
                   {link.title}
                 </Link>
