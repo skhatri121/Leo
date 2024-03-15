@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
-import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
 import Navbar from "../Components/Navbar";
 import {
   Box,
@@ -12,9 +11,14 @@ import {
   ModalContent,
   ModalCloseButton,
   ModalBody,
+  Text,
+  Button,
+  useMediaQuery,
 } from "@chakra-ui/react";
 
 const ResourcesPage = () => {
+  const [isSmallerThan480] = useMediaQuery("(max-width: 480px)");
+
   const [selectedImage, setSelectedImage] = useState(null);
   const imgSrc = [
     "./Resources/Alpha logo.png",
@@ -44,8 +48,12 @@ const ResourcesPage = () => {
       <Header />
       <Navbar />
       <Box bg="primary.6">
-        <Box maxW="1200px" m="0 auto" p="20px 20px">
-          <SimpleGrid columns={[1, 2, 4]} spacing="20px">
+        <Box maxW="1200px" m="0 auto" p="20px 20px" pb="50px">
+          <SimpleGrid
+            columns={[1, 2, 4]}
+            spacing="20px"
+            justifyItems={isSmallerThan480 ? "center" : "normal"}
+          >
             {imgSrc.map((img, index) => (
               <Image
                 key={index}
@@ -56,6 +64,19 @@ const ResourcesPage = () => {
               />
             ))}
           </SimpleGrid>
+          <Box mt="15px">
+            <Text>
+              For more resources:
+              <Box>
+                <a
+                  href="https://drive.google.com/drive/folders/1XujGUh267yUz4JHgcK83ciAjxX4Fc3PO"
+                  target="_blank"
+                >
+                  <b>Click here</b>
+                </a>
+              </Box>
+            </Text>
+          </Box>
         </Box>
       </Box>
       <Footer />
@@ -69,12 +90,6 @@ const ResourcesPage = () => {
           </ModalBody>
         </ModalContent>
       </Modal>
-
-      <DocViewer
-        documents={docs}
-        initialActiveDocument={docs[1]}
-        pluginRenderers={DocViewerRenderers}
-      />
     </>
   );
 };

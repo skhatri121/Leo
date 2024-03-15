@@ -39,7 +39,6 @@ const PhotoGalleryPage = () => {
     "../Gallery/tenth.jpg",
     "../Gallery/third.jpg",
     "../Gallery/thirteen.jpg",
-    "../Gallery/twelve.jpg",
   ];
 
   return (

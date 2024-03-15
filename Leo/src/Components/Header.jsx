@@ -3,8 +3,8 @@ import { Box, useMediaQuery } from "@chakra-ui/react";
 import { AiFillEnvironment } from "react-icons/ai";
 
 const description = {
-  email: "ldc325@gmail.com",
-  location: "Basundhara, Kathmandu, Nepal",
+  email: "ldc325m@gmail.com",
+  location: "Basundhara - Kathmandu, Nepal",
 };
 
 const Header = () => {

@@ -18,9 +18,9 @@ const GallerySection = ({ pageCount }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const imagesPerPage = 8;
   const gallerySrc = [
-    "./Gallery/Second.jpg",
-    "./Gallery/Second.jpg",
-    "./Gallery/Second.jpg",
+    "./Gallery/sixth.jpg",
+    "./Gallery/elven.jpg",
+    "./Gallery/ninth.jpg",
     "./Gallery/Second.jpg",
   ];
 
@@ -48,7 +48,7 @@ const GallerySection = ({ pageCount }) => {
                 onClick={() => handleImageClick(img)}
                 cursor="pointer"
               >
-                <Image src={img} alt={`Image ${index}`} />
+                <Image src={img} alt={`Image ${index}`} h="300px" w="100%" />
               </Box>
             ))}
           </SimpleGrid>

@@ -33,14 +33,15 @@ const DonateDetails = () => {
           <DrawerCloseButton />
           <DrawerHeader fontSize="25px">Donate here</DrawerHeader>
           <DrawerBody>
-            <Box textAlign="center">
-              <Text as="u">Esewa Id:</Text>
-              <Text>9860339830</Text>
-            </Box>
+            <Box textAlign="center"></Box>
             <Box textAlign="center" mt="15px">
               <Text as="u">Bank Details:</Text>
-              <Text>Bank Name: NIC ASIA BANK</Text>
-              <Text>Bank a/c no: 1685750960149001</Text>
+              <Text>
+                <b> LEO DISTRICT COUNCIL 325 M NEPAL </b>
+              </Text>
+              <Text>Bank Name: Nepal Investment Mega Bank Limited</Text>
+              <Text>Bank a/c no: 21701050008884</Text>
+              <Text>Branch Name: Lekhnath Branch</Text>
             </Box>
           </DrawerBody>
         </DrawerContent>

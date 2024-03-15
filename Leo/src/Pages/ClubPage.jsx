@@ -65,7 +65,7 @@ const ClubPage = () => {
       <Header />
       <Navbar />
       <Box bg="primary.4">
-        <Box maxW="1200px" m="0 auto" p="20px" w="100%">
+        <Box maxW="1200px" m="0 auto" p="50px" pb="100px" w="100%">
           <Table color="primary.2">
             <Thead fontSize="20px" fontWeight="600">
               Club Names
@@ -93,7 +93,6 @@ const ClubPage = () => {
           />
         </Box>
       </Box>
-
       <Footer />
     </>
   );

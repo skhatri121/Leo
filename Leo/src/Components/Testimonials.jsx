@@ -8,16 +8,10 @@ const Testimonials = () => {
       avatar: "./Testimonials/FIrst.png",
       name: "Leo Ashwin Khatiwada",
       position: "District President",
+      title: ` Leo Club: A Life-Changing Journey of Personal Growth and Community Service `,
       saying:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae veniam accusamus laborum atque voluptatibus temporibus provident doloribus est quia consectetur, sunt sequi ducimus ex eligendi, minus perferendis dolore ad sed.",
+        "For me, Leo Club is not just a club; it's a transformative experience that has reshaped my perspective on myself, my community, and my country. It's a place where I've come to appreciate the power of small changes to make a significant impact, and where I've had the opportunity to develop my leadership skills and vision. Through Leo Club, I've gained valuable experience and insights that have equipped me to make a positive difference in the world. It's a community that has empowered me to grow and contribute in ways I never thought possible.",
     },
-    // {
-    //   avatar: "./Testimonials/Second.png",
-    //   name: "Leo Prem Raj Tiwari",
-    //   position: "District President",
-    //   saying:
-    //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae veniam accusamus laborum atque voluptatibus temporibus provident doloribus est quia consectetur, sunt sequi ducimus ex eligendi, minus perferendis dolore ad sed.",
-    // },
   ];
 
   return (
@@ -47,8 +41,9 @@ const Testimonials = () => {
             </Box>
             <Box py={isSmallerThan610 ? "10px" : "20px"} px="5px">
               <Text>
-                <b>"</b> {details.saying} <b>"</b>
+                <b>"</b> <b> {details.title}</b> <b>"</b>
               </Text>
+              <Text>{details.saying}</Text>
             </Box>
           </Box>
         ))}
