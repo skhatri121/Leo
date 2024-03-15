@@ -29,7 +29,7 @@ const DonateDetails = () => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent bg="primary.1" color="primary.2">
           <DrawerCloseButton />
           <DrawerHeader fontSize="25px">Donate here</DrawerHeader>
           <DrawerBody>

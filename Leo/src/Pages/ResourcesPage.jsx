@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
+import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
 import Navbar from "../Components/Navbar";
 import {
   Box,
@@ -24,6 +25,10 @@ const ResourcesPage = () => {
     "./Resources/Omega.png",
     "./Resources/Patti_Hill_Logo-removebg-preview.png",
     "./Resources/DistrictBanner.jpg",
+  ];
+
+  const docs = [
+    { uri: "../Resources/Treasurer report format.docx", fileType: "docx" },
   ];
 
   const handleImageClick = (img) => {
@@ -64,6 +69,12 @@ const ResourcesPage = () => {
           </ModalBody>
         </ModalContent>
       </Modal>
+
+      <DocViewer
+        documents={docs}
+        initialActiveDocument={docs[1]}
+        pluginRenderers={DocViewerRenderers}
+      />
     </>
   );
 };

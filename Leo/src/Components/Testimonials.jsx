@@ -11,13 +11,13 @@ const Testimonials = () => {
       saying:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae veniam accusamus laborum atque voluptatibus temporibus provident doloribus est quia consectetur, sunt sequi ducimus ex eligendi, minus perferendis dolore ad sed.",
     },
-    {
-      avatar: "./Testimonials/Second.png",
-      name: "Leo Prem Raj Tiwari",
-      position: "District President",
-      saying:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae veniam accusamus laborum atque voluptatibus temporibus provident doloribus est quia consectetur, sunt sequi ducimus ex eligendi, minus perferendis dolore ad sed.",
-    },
+    // {
+    //   avatar: "./Testimonials/Second.png",
+    //   name: "Leo Prem Raj Tiwari",
+    //   position: "District President",
+    //   saying:
+    //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae veniam accusamus laborum atque voluptatibus temporibus provident doloribus est quia consectetur, sunt sequi ducimus ex eligendi, minus perferendis dolore ad sed.",
+    // },
   ];
 
   return (

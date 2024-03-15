@@ -6,6 +6,7 @@ import { Box, Table, Thead, Tr, Td } from "@chakra-ui/react";
 import ReactPaginate from "react-paginate";
 import { useState, useEffect } from "react";
 import "../clubpaginate.css";
+import "../style.css";
 const ClubPage = () => {
   const clubNamesPerPage = 5;
   const [currentPage, setCurrentPage] = useState(0);

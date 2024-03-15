@@ -12,7 +12,7 @@ const LeoSection = () => {
   ];
 
   return (
-    <Box mt="15px">
+    <Box p="20px 20px">
       <Box
         display={isSmallerThan730 ? "grid" : "flex"}
         maxW="1200px"

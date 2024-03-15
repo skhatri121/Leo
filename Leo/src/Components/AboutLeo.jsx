@@ -22,7 +22,7 @@ const AboutLeo = () => {
   return (
     <>
       {sections.map((section, index) => (
-        <Box key={index} bg={section.color}>
+        <Box key={index} bg={section.color} p="20px">
           <Box
             p="15px 10px 10px 15px"
             maxW="1200px"

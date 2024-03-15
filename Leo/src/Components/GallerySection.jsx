@@ -2,7 +2,6 @@ import { useState } from "react";
 import {
   Heading,
   Box,
-  Text,
   SimpleGrid,
   Image,
   Modal,
@@ -10,21 +9,15 @@ import {
   ModalContent,
   ModalBody,
   ModalCloseButton,
+  Button,
+  Link,
 } from "@chakra-ui/react";
-import ReactPaginate from "react-paginate";
-import "../style.css";
+
 const GallerySection = ({ pageCount }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
   const imagesPerPage = 8;
   const gallerySrc = [
-    "./Gallery/Second.jpg",
-    "./Gallery/Second.jpg",
-    "./Gallery/Second.jpg",
-    "./Gallery/Second.jpg",
-    "./Gallery/Second.jpg",
-    "./Gallery/Second.jpg",
-    "./Gallery/Second.jpg",
     "./Gallery/Second.jpg",
     "./Gallery/Second.jpg",
     "./Gallery/Second.jpg",
@@ -37,10 +30,6 @@ const GallerySection = ({ pageCount }) => {
 
   const handleCloseModal = () => {
     setSelectedImage(null);
-  };
-
-  const handlePageClick = (data) => {
-    setCurrentPage(data.selected);
   };
 
   const indexOfLastImage = (currentPage + 1) * imagesPerPage;
@@ -63,29 +52,15 @@ const GallerySection = ({ pageCount }) => {
               </Box>
             ))}
           </SimpleGrid>
-          <ReactPaginate
-            previousLabel={<Text>← Previous</Text>}
-            nextLabel={<Text>Next →</Text>}
-            pageCount={Math.ceil(gallerySrc.length / imagesPerPage)}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={5}
-            onPageChange={handlePageClick}
-            containerClassName={"pagination"}
-            subContainerClassName={"pages pagination"}
-            activeClassName={"active"}
-            previousClassName={"pagination-previous"}
-            nextClassName={"pagination-next"}
-            pageClassName={"pagination-item"}
-            breakClassName={"pagination-break"}
-            pageLinkClassName={"pagination-link"}
-            previousLinkClassName={"pagination-link-previous"}
-            nextLinkClassName={"pagination-link-next"}
-            disabledClassName={"pagination-disabled"}
-          />
+          <Box mt="10px" textAlign="end">
+            <Button bg="primary.3" color="primary.2">
+              <Link href="/gallery/photo"> See More</Link>
+            </Button>
+          </Box>
         </Box>
       </Box>
 
-      <Modal isOpen={!!selectedImage} onClose={handleCloseModal} size="full">
+      <Modal isOpen={!!selectedImage} onClose={handleCloseModal} size="lg">
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
