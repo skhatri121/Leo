@@ -14,7 +14,9 @@ const VideoGalleryPage = () => {
       <Box>
         <Box maxW="1200px" m="0 auto">
           {videoId.map((video) => (
-            <VideoPlayer videoId={video} />
+            <Box pb="20px">
+              <VideoPlayer videoId={video} />
+            </Box>
           ))}
         </Box>
       </Box>

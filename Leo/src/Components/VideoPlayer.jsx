@@ -9,7 +9,7 @@ const VideoPlayer = ({ videoId }) => {
   };
   return (
     <>
-      <YouTube videoId={videoId} opts={opts} />;
+      <YouTube videoId={videoId} opts={opts} />
     </>
   );
 };
